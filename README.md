@@ -1,6 +1,6 @@
 # DDPG-Keras-Torcs-Simulator-Setup
 
-This simulator is with respect to the Github repository https://github.com/yanpanlau/DDPG-Keras-Torcs for Reinforcement learning using Torcs simulator.
+This simulator setup is with respect to the Github repository https://github.com/yanpanlau/DDPG-Keras-Torcs for **Reinforcement learning** using **Torcs simulator**.
 
 Below is the brief installation procedure 
 ```
@@ -13,12 +13,12 @@ python ddpg.py
 
 This may not work directly as there are dependencies which needs to be installed.
 
-Lets see the detailed steps and errors.
+Lets see the detailed steps and errors encountered during the setup.
 
-If you have not installed dependancy packages and directly going for above steps you might get the below errors
+If you have not installed dependancy packages and directly going for the 5 steps mentioned above, you might get the below errors
 
-Error 1
-Details : No module names Gym.
+**Error 1
+Details : No module names Gym.**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ python ddpg.py 
 Traceback (most recent call last):
@@ -28,17 +28,17 @@ Traceback (most recent call last):
     import gym
 ImportError: No module named gym
 ```
-Fix : Install gym using the below procedure
+**Fix :** **Install gym** using the below procedure
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ pip install gym[all]
 ```
 
-Error 2
-Details : Failed Failed building wheel for Box2D-kengz while installing gym
+**Error 2
+Details : Failed Failed building wheel for Box2D-kengz while installing gym**
 ```
 Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-nlkdIE/Box2D-kengz/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-6P0gPk-record/install-record.txt --single-version-externally-managed --compile --user --prefix=" failed with error code 1 in /tmp/pip-build-nlkdIE/Box2D-kengz/
 ```
-Fix : Install below packages before installing gym
+**Fix : Install below packages before installing gym**
 ```
 xvfb 
 libav-tools 
@@ -49,8 +49,8 @@ cmake
 ```
 After re-installing these packages, re-start the installation of gym[all]
 
-Error 3
-Details : No module named keras.models
+**Error 3
+Details : No module named keras.models**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ python ddpg.py 
 Traceback (most recent call last):
@@ -58,13 +58,13 @@ Traceback (most recent call last):
     from keras.models import model_from_json, Model
 ImportError: No module named keras.models
 ```
-Fix : Install keras
+**Fix : Install keras**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$  sudo pip install keras==1.1.0
 ```
 
-Error 4
-Details : ImportError: No module named tensorflow
+**Error 4
+Details : ImportError: No module named tensorflow**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ python ddpg.py 
 Using TensorFlow backend.
@@ -79,25 +79,25 @@ Traceback (most recent call last):
     import tensorflow as tf
 ImportError: No module named tensorflow
 ```
-Fix : Install tensorflow 
+**Fix : Install tensorflow** 
 ```
 sudo pip install tensorflow==0.12.0
 ```
 
-Error 5 
-Details : After clearning above error when you run ```python ddpg.py``` you might see the torcs simulator relaunches itself repeatedely.
-Fix : Install vtorcs-RL-color by following below steps
+**Error 5 
+Details : After clearning above error when you run ```python ddpg.py``` you might see the torcs simulator relaunches itself repeatedely.**
+**Fix : Install vtorcs-RL-color by following below steps**
 
 a. Install the below dependancy packages.
-```sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev ```
-b. cd into the ```vtorcs-RL-color``` directory which is inside gym directory.
-c. ```./configure```
-d. ```make```
-e. ```make install``` 
-f. ```make install```
+```sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev ``` <br />
+b. cd into the ```vtorcs-RL-color``` directory which is inside gym directory. <br />
+c. ```./configure``` <br />
+d. ```make``` <br />
+e. ```make install``` <br /> 
+f. ```make install``` <br />
 
 Note : If you face errors in make steps, that would be due to the permission issue. So might have to re-run make with sudo
 
-
+Now if you could run ```python ddpg.py``` you should be able to see the simulator running. 
 
 
