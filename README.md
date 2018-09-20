@@ -17,8 +17,8 @@ Lets see the detailed steps and errors encountered during the setup.
 
 If you have not installed dependancy packages and directly going for the 5 steps mentioned above, you might get the below errors
 
-**Error 1
-Details : No module names Gym.**
+###Error 1 <br />
+**Details : No module names Gym.**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ python ddpg.py 
 Traceback (most recent call last):
@@ -30,11 +30,13 @@ ImportError: No module named gym
 ```
 **Fix :** **Install gym** using the below procedure
 ```
-kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ pip install gym[all]
+kk@kk-Lenovo-i
+
+deapad-320-15ISK:~/gym_torcs$ pip install gym[all]
 ```
 
-**Error 2
-Details : Failed Failed building wheel for Box2D-kengz while installing gym**
+###Error 2 <br />
+**Details : Failed Failed building wheel f0or Box2D-kengz while installing gym**
 ```
 Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-nlkdIE/Box2D-kengz/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-6P0gPk-record/install-record.txt --single-version-externally-managed --compile --user --prefix=" failed with error code 1 in /tmp/pip-build-nlkdIE/Box2D-kengz/
 ```
@@ -49,8 +51,8 @@ cmake
 ```
 After re-installing these packages, re-start the installation of gym[all]
 
-**Error 3
-Details : No module named keras.models**
+###Error 3 <br />
+**Details : No module named keras.models**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ python ddpg.py 
 Traceback (most recent call last):
@@ -63,8 +65,8 @@ ImportError: No module named keras.models
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$  sudo pip install keras==1.1.0
 ```
 
-**Error 4
-Details : ImportError: No module named tensorflow**
+###Error 4 <br />
+**Details : ImportError: No module named tensorflow**
 ```
 kk@kk-Lenovo-ideapad-320-15ISK:~/gym_torcs$ python ddpg.py 
 Using TensorFlow backend.
@@ -84,8 +86,8 @@ ImportError: No module named tensorflow
 sudo pip install tensorflow==0.12.0
 ```
 
-**Error 5 
-Details : After clearning above error when you run ```python ddpg.py``` you might see the torcs simulator relaunches itself repeatedely.**
+###Error 5 <br />
+**Details : After clearning above error when you run ```python ddpg.py``` you might see the torcs simulator relaunches itself repeatedely.**
 **Fix : Install vtorcs-RL-color by following below steps**
 
 a. Install the below dependancy packages.
@@ -100,4 +102,13 @@ Note : If you face errors in make steps, that would be due to the permission iss
 
 Now if you could run ```python ddpg.py``` you should be able to see the simulator running. 
 
+###Error 6 <br />
+**Details : Relaunching issue may not get fixed after implementing the above solution. And also you may see some errors related to xte from autostart.sh file **
+**Fix : Install xautomation by running below command **
+```
+sudo apt-get install xautomation
+```
 
+This document would be updated as and when I find new errors or issues. 
+
+Thank you. 
