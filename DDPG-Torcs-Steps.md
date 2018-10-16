@@ -96,7 +96,7 @@ b. cd into the ```vtorcs-RL-color``` directory which is inside gym directory. <b
 c. ```./configure``` <br />
 d. ```make``` <br />
 e. ```make install``` <br /> 
-f. ```make install``` <br />
+f. ```make datainstall``` <br />
 
 Note : If you face errors in make steps, that would be due to the permission issue. So might have to re-run make with sudo
 
