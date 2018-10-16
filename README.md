@@ -27,4 +27,4 @@ python ddpg.py
 
 (Change the flag **train_indicator**=1 in ddpg.py if you want to train the network)
 
-Kindly check the file for installation errors. 
+Kindly check the [Installation Errors](https://github.com/kk2491/DDPG-Keras-Torcs-Simulator-Setup/blob/master/DDPG-Torcs-Steps.md) for installation errors. 
